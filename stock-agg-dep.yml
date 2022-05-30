@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: stock-aggregator-dep
+  name: stock-aggregator-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stock-aggregator-dep
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: stock-aggregator-dep
+    spec:
+      containers:
+      - image: abhibroto0402/stock-aggregator:latest
+        name: stock-aggregator
+        ports:
+        - containerPort: 8080
+        envFrom:
+          - configMapRef:
+              name: stock-config
+          - secretRef:
+              name: api-key
+        resources: {}
+status: {}
