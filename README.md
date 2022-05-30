@@ -1,4 +1,4 @@
-# DEPLOY In Minikube
+# Deploy In Minikube
 Run following steps to deploy _stock-aggregator_ service on minikube locally 
 1. Create config map `kubectl create -f stock-agg-cm.yml`
 2. Create secrets after replacing the placeholder in the `stock-agg-secret.yml` with base64 encoded API Key 
