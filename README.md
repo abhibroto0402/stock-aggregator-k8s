@@ -83,7 +83,3 @@ In a browser open 127.0.0.1 or the localhost address and this should pull up the
    ]
 }
 ```
-
-# Alternate to using Ingress (Load Balancer)
-Instead of running step 4 give above, `kubectl create stock-agg-lb.yml` followed by `minikube tunnel` in a separate terminal.
-Get the _EXTERNAL_IP_ by `kubectl get svc stock-agg-lb`. Then `curl -v IP_Address:8080/stock-aggregate`
